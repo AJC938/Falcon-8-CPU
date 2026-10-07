@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="800" viewBox="0 0 1400 800">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#f3f6fb"/>
+    </linearGradient>
+    <linearGradient id="chip" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#34445e"/>
+      <stop offset="1" stop-color="#182338"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#0f172a" flood-opacity=".12"/>
+    </filter>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#2276e8"/>
+    </marker>
+    <style>
+      .title{font:700 52px Arial,sans-serif;fill:#111827}
+      .titleBlue{fill:#2477e8}
+      .subtitle{font:400 24px Arial,sans-serif;fill:#6b7b99}
+      .label{font:700 22px Arial,sans-serif;fill:#172033}
+      .small{font:400 18px Arial,sans-serif;fill:#53627a}
+      .chipTitle{font:700 44px Arial,sans-serif;fill:white}
+      .chipSub{font:400 22px Arial,sans-serif;fill:#d7deea}
+      .white{fill:#f8fafc}
+      .mono{font:500 18px "Courier New",monospace;fill:#dce7f7}
+      .panel{fill:url(#chip);stroke:#8497b5;stroke-width:2}
+      .wire{stroke:#2276e8;stroke-width:5;fill:none;marker-end:url(#arrow)}
+      .wireBi{stroke:#2276e8;stroke-width:5;fill:none;marker-start:url(#arrow);marker-end:url(#arrow)}
+    </style>
+  </defs>
+
+  <rect x="18" y="18" width="1364" height="764" rx="28" fill="url(#bg)" stroke="#dbe4f0" stroke-width="3"/>
+
+  <text x="60" y="92" class="title">Falcon-8 <tspan class="titleBlue">CPU</tspan></text>
+  <text x="62" y="132" class="subtitle">8-bit Single-Cycle Processor</text>
+
+  <!-- Program Counter -->
+  <g filter="url(#shadow)">
+    <rect x="560" y="85" width="280" height="110" rx="20" fill="#eef3fa" stroke="#8fa3bf" stroke-width="2"/>
+    <text x="700" y="125" text-anchor="middle" class="label">Program Counter</text>
+    <rect x="605" y="143" width="190" height="38" rx="8" fill="#273449"/>
+    <text x="700" y="170" text-anchor="middle" class="mono">0x00</text>
+  </g>
+
+  <!-- Instruction ROM -->
+  <g filter="url(#shadow)">
+    <rect x="70" y="250" width="315" height="260" rx="20" class="panel"/>
+    <rect x="95" y="280" width="265" height="155" rx="10" fill="#edf2f7" stroke="#b8c4d4"/>
+    <text x="120" y="315" class="mono" fill="#26344a">00100010</text>
+    <text x="120" y="350" class="mono" fill="#26344a">00010001</text>
+    <text x="120" y="385" class="mono" fill="#26344a">01000011</text>
+    <text x="120" y="420" class="mono" fill="#26344a">00000000</text>
+    <text x="120" y="476" class="label white">Instruction ROM</text>
+  </g>
+
+  <!-- CPU -->
+  <g filter="url(#shadow)">
+    <rect x="485" y="255" width="430" height="290" rx="34" fill="url(#chip)" stroke="#8497b5" stroke-width="3"/>
+    <circle cx="510" cy="280" r="9" fill="#8ea2bf"/><circle cx="890" cy="280" r="9" fill="#8ea2bf"/>
+    <circle cx="510" cy="520" r="9" fill="#8ea2bf"/><circle cx="890" cy="520" r="9" fill="#8ea2bf"/>
+    <text x="700" y="385" text-anchor="middle" class="chipTitle">CPU</text>
+    <text x="700" y="425" text-anchor="middle" class="chipSub">8-bit Single-Cycle</text>
+  </g>
+
+  <!-- RAM -->
+  <g filter="url(#shadow)">
+    <rect x="1015" y="250" width="315" height="260" rx="20" class="panel"/>
+    <text x="1172" y="295" text-anchor="middle" class="label white">Data RAM</text>
+    <rect x="1045" y="320" width="255" height="145" rx="10" fill="#273449" stroke="#8ea2bf"/>
+    <text x="1065" y="355" class="mono">0x00</text><text x="1250" y="355" class="mono">00</text>
+    <text x="1065" y="390" class="mono">0x01</text><text x="1250" y="390" class="mono">0A</text>
+    <text x="1065" y="425" class="mono">0x02</text><text x="1250" y="425" class="mono">14</text>
+    <text x="1065" y="460" class="mono">0x03</text><text x="1250" y="460" class="mono">00</text>
+    <text x="1172" y="492" text-anchor="middle" class="small white">256 × 8-bit</text>
+  </g>
+
+  <!-- Registers -->
+  <g filter="url(#shadow)">
+    <rect x="410" y="595" width="360" height="145" rx="20" class="panel"/>
+    <text x="590" y="630" text-anchor="middle" class="label white">Registers</text>
+    <text x="455" y="666" class="mono">R0  00</text><text x="620" y="666" class="mono">R4  00</text>
+    <text x="455" y="695" class="mono">R1  00</text><text x="620" y="695" class="mono">R5  00</text>
+    <text x="455" y="724" class="mono">R2  00</text><text x="620" y="724" class="mono">R6  00</text>
+  </g>
+
+  <!-- Control -->
+  <g filter="url(#shadow)">
+    <rect x="820" y="610" width="310" height="115" rx="20" class="panel"/>
+    <circle cx="885" cy="667" r="22" fill="#63a7ff"/>
+    <circle cx="885" cy="667" r="8" fill="#182338"/>
+    <text x="1000" y="675" text-anchor="middle" class="label white">Control Logic</text>
+  </g>
+
+  <!-- wires -->
+  <path d="M385 380 H485" class="wire"/>
+  <text x="435" y="350" text-anchor="middle" class="small">Instruction (16-bit)</text>
+
+  <path d="M915 390 H1015" class="wireBi"/>
+  <text x="965" y="360" text-anchor="middle" class="small">Data Bus (8-bit)</text>
+
+  <path d="M700 255 V195" class="wire"/>
+  <path d="M840 140 H900 V220 H700" class="wire"/>
+  <text x="930" y="150" class="small">Next Address</text>
+
+  <path d="M590 595 V545" class="wireBi"/>
+  <path d="M820 665 H790 V520 H915" class="wire"/>
+  <path d="M700 545 V610" class="wire"/>
+
+  <text x="700" y="765" text-anchor="middle" class="small">Custom ISA • 8-bit datapath • 16-bit instructions • ROM + RAM • Zero / Carry flags</text>
+</svg>
