@@ -5,7 +5,7 @@
 Falcon-8 is a custom educational CPU built to demonstrate the fundamentals of processor architecture at the digital-logic level, including instruction execution, datapath design, control logic, memory, registers, branching, and status flags.
 
 <p align="center">
-  <img src="images/Falcon-8-Architecture.svg" alt="Falcon-8 CPU Architecture" width="95%">
+  <img src="images/Falcon-8-CPU.svg" alt="Falcon-8 8-bit CPU" width="92%">
 </p>
 
 ## Architecture
